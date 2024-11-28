@@ -1,0 +1,17 @@
+<h3 class="text-center">Add a New Flat</h3>
+<%= link_to 'Back to All Flats', flats_path, class: 'btn btn-success mt-2 ms-2' %>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <%= simple_form_for @flat do |f| %>
+        <%= f.input :name, label: "Flat Name" %>
+        <%= f.input :address, label: "Address" %>
+        <%= f.input :description, label: "Description", as: :text %>
+        <%= f.input :price_per_night, label: "Price Per Night (£)" %>
+        <%= f.input :number_of_guests, label: "Number of Guests", collection: 1..10, prompt: "Select number of guests" %>
+        <%= f.button :submit, "Add Flat", class: 'btn btn-primary mb-2 ms-2' %>
+      <% end %>
+    </div>
+  </div>
+</div>

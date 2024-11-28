@@ -1,0 +1,17 @@
+<h1 class="main-title text-center my-4">Flat Details</h1>
+
+<div class="container">
+  <div class="card shadow-lg mb-4">
+    <div class="card-header bg-primary text-white">
+      <h2 class="card-title mb-0"><%= @flat.name %></h2>
+    </div>
+    <div class="card-body">
+      <p><strong>Address:</strong> <%= @flat.address %></p>
+      <p><strong>Description:</strong> <%= @flat.description %></p>
+      <p><strong>Price per night:</strong> £<%= @flat.price_per_night %></p>
+      <p><strong>Number of guests:</strong> <%= @flat.number_of_guests %></p>
+
+      <%= link_to 'Back to All Flats', flats_path, class: 'btn btn-primary mt-3' %>
+    </div>
+  </div>
+</div>

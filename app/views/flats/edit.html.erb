@@ -1,0 +1,13 @@
+<h1>Edit Flat</h1>
+
+<%= simple_form_for @flat do |f| %>
+  <%= f.input :name, label: "Flat Name" %>
+  <%= f.input :address, label: "Address" %>
+  <%= f.input :description, label: "Description", as: :text %>
+  <%= f.input :price_per_night, label: "Price per Night (£)" %>
+  <%= f.input :number_of_guests, label: "Number of Guests", collection: 1..10, prompt: "Select number of guests" %>
+  <%= f.button :submit, "Update Flat", class: 'btn btn-primary' %>
+<% end %>
+
+<%= link_to 'Back to Flat', flat_path(@flat), class: 'btn btn-secondary' %>
+<%= link_to 'Delete', flat_path(@flat), method: :delete, data: { confirm: 'Are you sure you want to delete this flat?' }, class: 'btn btn-danger' %>

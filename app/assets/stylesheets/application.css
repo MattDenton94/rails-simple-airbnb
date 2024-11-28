@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+.main-title {
+  text-align:  center;
+  padding: 20px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.flat-list {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+.text-center {
+  margin-top: 20px;
+}

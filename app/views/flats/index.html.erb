@@ -1,0 +1,27 @@
+<h1 class="main-title" style="color: #007bff;">
+  <%= "Welcome to simple AirBNB" %>
+</h1>
+
+<div class="container">
+  <%= link_to 'Add Flat', new_flat_path, class: 'btn btn-info mb-3' %>
+  <h2 class="flat-list"><strong>Here are our flats:</strong></h2>
+
+  <div class="row">
+    <% @flats.each do |flat| %>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= flat.name %></h5>
+            <p class="card-text">Address: <%= flat.address %></p>
+            <p class="card-text">Description: <%= flat.description %></p>
+            <p class="card-text">Price: £<%= flat.price_per_night %> per night</p>
+            <p class="card-text">Guests: <%= flat.number_of_guests %></p>
+            <%= link_to 'Show Details', flat_path(flat), class: 'btn btn-primary' %>
+            <%= link_to 'Edit', edit_flat_path(flat), class: 'btn btn-success' %>
+            <%= link_to 'Delete', flat_path(flat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} , class: 'btn btn-danger' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
